@@ -1,0 +1,186 @@
+// Folders
+def workspaceFolderName = "${WORKSPACE_NAME}"
+def projectFolderName = "${PROJECT_NAME}"
+
+// Variables
+def infrastructureRepository = "ssh://jenkins@gerrit:29418/${PROJECT_NAME}/doa17-infrastructure"
+
+// Views
+def doa17EnvironmentPipeline = buildPipelineView(projectFolderName + "/DOA17_Environment_Pipeline")
+
+// Jobs DOA17_Environment_Pipeline
+def doa17InfrastructureRepository = freeStyleJob(projectFolderName + "/DOA17_Infrastructure_Repository")
+def doa17LaunchEnvironment = freeStyleJob(projectFolderName + "/DOA17_Launch_Environment")
+def doa17CreateApplication = freeStyleJob(projectFolderName + "/DOA17_Create_Application")
+def doa17CreateDevelopmentGroup = freeStyleJob(projectFolderName + "/DOA17_Create_Development_Group")
+def doa17CreateProductionGroup = freeStyleJob(projectFolderName + "/DOA17_Create_Production_Group")
+
+// DOA17_Environment_Pipeline
+doa17EnvironmentPipeline.with{
+    title('DOA17 Environment Pipeline')
+    displayedBuilds(5)
+    selectedJob(projectFolderName + "/DOA17_Infrastructure_Repository")
+    showPipelineDefinitionHeader()
+    alwaysAllowManualTrigger()
+    refreshFrequency(5)
+}
+
+// Job DOA17_Infrastructure_Repository
+doa17InfrastructureRepository.with{
+  description("Job Description")
+  environmentVariables {
+    env('WORKSPACE_NAME', workspaceFolderName)
+    env('PROJECT_NAME', projectFolderName)
+  }
+  parameters{
+    stringParam("KEY",'Description',"Value")
+  }
+  wrappers {
+    preBuildCleanup()
+    maskPasswords()
+  }
+  label("docker")
+    steps {
+    shell('''
+set +x
+
+set -x'''.stripMargin()
+    )
+  }
+  publishers{
+    downstreamParameterized{
+      trigger(projectFolderName + "/DOA17_Launch_Environment"){
+        condition("UNSTABLE_OR_BETTER")
+        parameters{
+          currentBuild()
+        }
+      }
+    }
+  }
+}
+
+// Job DOA17_Launch_Environment
+doa17LaunchEnvironment.with{
+  description("Job Description")
+  environmentVariables {
+    env('WORKSPACE_NAME', workspaceFolderName)
+    env('PROJECT_NAME', projectFolderName)
+  }
+  parameters{
+    stringParam("KEY",'Description',"Value")
+  }
+  wrappers {
+    preBuildCleanup()
+    maskPasswords()
+  }
+  label("docker")
+    steps {
+    shell('''
+set +x
+
+set -x'''.stripMargin()
+    )
+  }
+  publishers{
+    downstreamParameterized{
+      trigger(projectFolderName + "/DOA17_Create_Application"){
+        condition("UNSTABLE_OR_BETTER")
+        parameters{
+          currentBuild()
+        }
+      }
+    }
+  }
+}
+
+// Job DOA17_Create_Application
+doa17CreateApplication.with{
+  description("Job Description")
+  environmentVariables {
+    env('WORKSPACE_NAME', workspaceFolderName)
+    env('PROJECT_NAME', projectFolderName)
+  }
+  parameters{
+    stringParam("KEY",'Description',"Value")
+  }
+  wrappers {
+    preBuildCleanup()
+    maskPasswords()
+  }
+  label("docker")
+    steps {
+    shell('''
+set +x
+
+set -x'''.stripMargin()
+    )
+  }
+  publishers{
+    downstreamParameterized{
+      trigger(projectFolderName + "/DOA17_Create_Development_Group"){
+        condition("UNSTABLE_OR_BETTER")
+        parameters{
+          currentBuild()
+        }
+      }
+    }
+  }
+}
+
+// Job DOA17_Create_Development_Group
+doa17CreateDevelopmentGroup.with{
+  description("Job Description")
+  environmentVariables {
+    env('WORKSPACE_NAME', workspaceFolderName)
+    env('PROJECT_NAME', projectFolderName)
+  }
+  parameters{
+    stringParam("KEY",'Description',"Value")
+  }
+  wrappers {
+    preBuildCleanup()
+    maskPasswords()
+  }
+  label("docker")
+    steps {
+    shell('''
+set +x
+
+set -x'''.stripMargin()
+    )
+  }
+  publishers{
+    downstreamParameterized{
+      trigger(projectFolderName + "/DOA17_Create_Production_Group"){
+        condition("UNSTABLE_OR_BETTER")
+        parameters{
+          currentBuild()
+        }
+      }
+    }
+  }
+}
+
+// Job DOA17_Create_Production_Group
+doa17CreateProductionGroup.with{
+  description("Job Description")
+  environmentVariables {
+    env('WORKSPACE_NAME', workspaceFolderName)
+    env('PROJECT_NAME', projectFolderName)
+  }
+  parameters{
+    stringParam("KEY",'Description',"Value")
+  }
+  wrappers {
+    preBuildCleanup()
+    maskPasswords()
+  }
+  label("docker")
+    steps {
+    shell('''
+set +x
+
+set -x'''.stripMargin()
+    )
+  }
+}
