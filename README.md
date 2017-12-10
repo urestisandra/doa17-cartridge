@@ -4,6 +4,6 @@ In this exercise you will put in practice the concepts of Continuous Integration
 
 Let's start!
 
-- Lab 1 - Get the code and load Cartridge
-- Lab 2 - Update and execute Environment Pipeline
-- Lab 3 - Update and execute CI/CD Pipeline
+- [Lab 1 - Get the code and load Cartridge](https://github.com/chuymarin/doa17-cartridge/blob/master/LAB_1.md)
+- [Lab 2 - Update and execute Environment Pipeline](https://github.com/chuymarin/doa17-cartridge/blob/master/LAB_2.md)
+- [Lab 3 - Update and execute CI/CD Pipeline](https://github.com/chuymarin/doa17-cartridge/blob/master/LAB_3.md)
