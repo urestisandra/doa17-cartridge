@@ -73,6 +73,7 @@ stringParam("AWS_REGION",'',"Default AWS Region")
 ...
 ```
 - Add the following code to the shell step:
+```
 ...
       shell('''
 set +x
@@ -133,3 +134,33 @@ set -x'''.stripMargin()
 ...
 ```
 - This will create Deployment Group for Production Environment in AWS CodeDeploy
+- save the changes and update your remote repository
+
+**Reload Cartridge**
+- Go to Jenkins/DevOps_Academy/{your-directory}/Cartridge_Management
+- Open Load_Cartridge Job, click in Build with Parameters, fill the parameters as follow:
+  - CARTRIDGE_CLONE_URL: https://github.com/{github-user}/doa17-cartridge.git
+  - Leave the other values empty
+- Build the Job
+
+**Open the AWS Console and go to**
+- Go to the AWS Console and access with your provided AWS User, use the region: N. Virginia (us-east-1)
+- Go to CloudFormation service and click in stack and see the outputs from the following stacks:
+  - DevOps-Workshop-Networking
+  - DevopsWorkshop-raem-roles
+- You will use these values while executing the pipeline
+
+**Execute Pipeline**
+- Go to Jenkins/DevOps_Academy/{your-directory}/
+- Open on DOA17_Environment_Pipeline Job, click in Build with Parameters link, and fill the values as follow:
+  - AWS_REGION: us-east-1
+  - ENVIRONMENT_NAME: your selected name for your environment used in previous steps
+  - WEB_APP_PROFILE: WebAppInstanceProfile value from DevOps-Workshop-Networking outputs
+  - WEB_APP_SG: WebAppSG value from DevOps-Workshop-Networking outputs
+  - PUBLIC_SUBNET: publicSubnet01 value from DevOps-Workshop-Networking outputs
+  - CODE_DEPLOY_ARN: DeployRoleArn value from DevopsWorkshop-raem-roles outputs
+- Execute the Job
+- You can see the pipeline process in: Jenkins/DevOps_Academy/{your-directory}/DOA17_Environment_Pipeline
+
+**Troubleshooting**
+- If one of the jobs from the pipeline fails, check if you missed some steps and change accordingly, if the problem persists ask your Instructor for a solution.
