@@ -127,7 +127,7 @@ export AWS_DEFAULT_REGION=$AWS_REGION
 echo "[INFO] Default region is set to $AWS_DEFAULT_REGION"
 
 echo "[INFO] Creating Code Deploy Deployment Group ${ENVIRONMENT_NAME}-ProdWebApp"
-aws deploy create-deployment-group --application-name ${ENVIRONMENT_NAME}-WebApp  --deployment-config-name CodeDeployDefault.OneAtATime --deployment-group-name ${ENVIRONMENT_NAME}-ProdWebApp --ec2-tag-filters Key=Name,Value=${ENVIRONMENT_NAME}-DevWebApp,Type=KEY_AND_VALUE --service-role-arn ${CODE_DEPLOY_ARN}
+aws deploy create-deployment-group --application-name ${ENVIRONMENT_NAME}-WebApp  --deployment-config-name CodeDeployDefault.OneAtATime --deployment-group-name ${ENVIRONMENT_NAME}-ProdWebApp --ec2-tag-filters Key=Name,Value=${ENVIRONMENT_NAME}-ProdWebApp,Type=KEY_AND_VALUE --service-role-arn ${CODE_DEPLOY_ARN}
 
 set -x'''.stripMargin()
     )
@@ -161,6 +161,16 @@ set -x'''.stripMargin()
   - CODE_DEPLOY_ARN: DeployRoleArn value from DevopsWorkshop-raem-roles outputs
 - Execute the Job
 - You can see the pipeline process in: Jenkins/DevOps_Academy/{your-directory}/DOA17_Environment_Pipeline
+
+**Resources Created**
+- If your pipeline ends successfully go to the AWS Console and verify the following
+- In AWS EC2 you should have 2 Instances created with the names {ENVIRONMENT_NAME}-DevWebApp {ENVIRONMENT_NAME}-ProdWebApp
+- In AWS S3 you should see a bucket named doa17-{ENVIRONMENT_NAME}
+- In AWS CodeBuild you should see a project named {ENVIRONMENT_NAME}-project
+- In AWS CodeDeploy you should see an application named {ENVIRONMENT_NAME}-WebApp and two deployment groups
+  - {ENVIRONMENT_NAME}-DevWebApp
+  - {ENVIRONMENT_NAME}-ProdApp
+- If you do not have permissions to see these services, ask your instructor
 
 **Troubleshooting**
 - If one of the jobs from the pipeline fails, check if you missed some steps and change accordingly, if the problem persists ask your Instructor for a solution.
