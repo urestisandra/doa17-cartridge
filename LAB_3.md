@@ -1,9 +1,9 @@
-## Lab 2 - Update Environment Pipeline Code
+## Lab 3 - Update CI/CD Pipeline Code
 
-**Modify DOA17_Launch_Environment Job**
+**Modify DOA17_Code_Build Job**
 
-- Open the file: `/jenkins/jobs/dsl/doa17-environment-pipeline.groovy` this file contains the environment pipeline and jobs
-- Modify parameters in Job DOA17_Launch_Environment Code:
+- Open the file: `/jenkins/jobs/dsl/doa17-ci-cd-pipeline.groovy` this file contains the ci/cd pipeline and jobs
+- Modify parameters in Job DOA17_Code_Build Code:
 ```
 # FROM:
   parameters{
