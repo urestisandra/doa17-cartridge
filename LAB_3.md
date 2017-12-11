@@ -139,6 +139,7 @@ set -x'''.stripMargin()
 - If your pipeline ends successfully go to the AWS Console and verify the following
 - In AWS CodeDeploy, select your application
 - Verify the status of your deployment groups, this should be **Success**
+- Go to AWS CloudFormation and check your stack outputs, click on the Dev and Prod URL's to see you environments running!
 
 **Troubleshooting**
 - If your CI/CD Pipeline fails, check the code for missing values, if problem persist ask your Instructor
