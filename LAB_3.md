@@ -143,3 +143,4 @@ set -x'''.stripMargin()
 **Troubleshooting**
 - If your CI/CD Pipeline fails, check the code for missing values, if problem persist ask your Instructor
 - If your CI/CD Pipeline success but your deployment fails, ask your Instructor for troubleshooting
+- If the CodeBuild takes longer than 35 seconds and your deployment fails, compare the etag from the deploy job and the current s3 artifact, change the sleep time accordingly, that way the etag won't a version behind
