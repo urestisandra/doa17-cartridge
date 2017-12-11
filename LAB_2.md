@@ -139,6 +139,7 @@ set -x'''.stripMargin()
   - CARTRIDGE_CLONE_URL: https://github.com/{github-user}/doa17-cartridge.git
   - Leave the other values empty
 - Build the Job
+- Repeat this step each time you make changes to the cartridge repository
 
 **Open the AWS Console and go to**
 - Go to the AWS Console and access with your provided AWS User, use the region: N. Virginia (us-east-1)
