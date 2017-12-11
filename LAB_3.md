@@ -109,6 +109,14 @@ set -x'''.stripMargin()
 ```
 - This will create a new deployment for the Development Environment
 
+**Reload Cartridge**
+- Go to Jenkins/DevOps_Academy/{your-directory}/Cartridge_Management
+- Open Load_Cartridge Job, click in Build with Parameters, fill the parameters as follow:
+  - CARTRIDGE_CLONE_URL: https://github.com/{github-user}/doa17-cartridge.git
+  - Leave the other values empty
+- Build the Job
+- Repeat this step each time you make changes to the cartridge repository
+
 **Executing the CI/CD Pipeline**
 - Go to Jenkins/DevOps_Academy/{your-directory}/
 - Open on DOA17_CI_CD_Pipeline Job, click in Build with Parameters link, and fill the values as follow:
