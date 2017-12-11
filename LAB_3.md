@@ -57,6 +57,13 @@ set -x'''.stripMargin()
 ...
 ```
 - This will create an application build and a revision for the build
+- In the publishers step add new property below `currentBuild()`
+```
+...
+currentBuild()
+propertiesFile('properties_file.txt')
+...
+```
 
 **Modify DOA17_Code_Deploy_Development Job**
 
@@ -87,13 +94,6 @@ set -x'''.stripMargin()
 ...
 ```
 - This will create a new deployment for the Development Environment
-- In the publishers step add new property below `currentBuild()`
-```
-...
-currentBuild()
-propertiesFile('properties_file.txt')
-...
-```
 
 **Modify DOA17_Code_Deploy_Production Job**
 
