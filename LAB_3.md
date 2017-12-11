@@ -60,10 +60,12 @@ set -x'''.stripMargin()
 
 **Modify DOA17_Code_Deploy_Development Job**
 
-- Modify the parameters same as first job, but this time the first parameter default value should be empty:
+- Modify the parameters same as first job, but this time add new parameter and the first parameter default value should be empty:
 ```
 ...
 stringParam("AWS_REGION",'',"Default AWS Region")
+...
+stringParam("BUILD_ETAG",'',"Application Build eTAG")
 ...
 ```
 - Add the following code to the shell step:
@@ -85,6 +87,13 @@ set -x'''.stripMargin()
 ...
 ```
 - This will create a new deployment for the Development Environment
+- In the publishers step add new property below `currentBuild()`
+```
+...
+currentBuild()
+propertiesFile('properties_file.txt')
+...
+```
 
 **Modify DOA17_Code_Deploy_Production Job**
 
