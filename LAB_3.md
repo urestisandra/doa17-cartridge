@@ -86,7 +86,7 @@ set -x'''.stripMargin()
 ```
 - This will create a new deployment for the Development Environment
 
-**Modify DOA17_Code_Deploy_Development Job**
+**Modify DOA17_Code_Deploy_Production Job**
 
 - Modify the parameters same as previous job
 - Add the following code to the shell step:
