@@ -5,7 +5,7 @@ In this exercise you will put in practice the concepts of Continuous Integration
 This is the architecture used in this exercise:
 ![architecture diagram](https://github.com/chuymarin/doa17-cartridge/blob/master/assets/doa17-diagram.png)
 
-And we are goind to create these two pipelines in Jenkins
+And we are going to create these two pipelines in Jenkins
 ![pipelines diagram](https://github.com/chuymarin/doa17-cartridge/blob/master/assets/doa17-process.png)
 
 Let's start!
