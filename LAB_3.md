@@ -46,7 +46,7 @@ aws codebuild start-build --project-name ${ENVIRONMENT_NAME}-project
 sleep 35s
 
 echo "[INFO] Getting Code Build eTAG"
-BUILD_ETAG=$(aws s3api head-object --bucket doa17-chuymarin --key WebAppOutputArtifact.zip --query \'ETag\' --output text)
+BUILD_ETAG=$(aws s3api head-object --bucket doa17-${ENVIRONMENT_NAME} --key WebAppOutputArtifact.zip --query \'ETag\' --output text)
 echo "BUILD_ETAG=$BUILD_ETAG" >> properties_file.txt
 
 echo "[INFO] Registering Revision for eTAG ${BUILD_ETAG}"
