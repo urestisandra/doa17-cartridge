@@ -105,9 +105,6 @@ echo "[INFO] Default region is set to $AWS_DEFAULT_REGION"
 echo "[INFO] Creating Code Deploy Deployment Group ${ENVIRONMENT_NAME}-DevWebApp"
 aws deploy create-deployment-group --application-name ${ENVIRONMENT_NAME}-WebApp  --deployment-config-name CodeDeployDefault.OneAtATime --deployment-group-name ${ENVIRONMENT_NAME}-DevWebApp --ec2-tag-filters Key=Name,Value=${ENVIRONMENT_NAME}-DevWebApp,Type=KEY_AND_VALUE --service-role-arn ${CODE_DEPLOY_ARN}
 
-echo "[INFO] Creating Code Build Project"
-aws codebuild create-project --cli-input-json file://${WORKSPACE}/create-project.json
-
 set -x'''.stripMargin()
     )
 ...
