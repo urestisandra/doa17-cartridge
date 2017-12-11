@@ -34,6 +34,10 @@ Note: ENVIRONMENT_NAME will be used in the next steps
 
 **Review and modify cartridge repository urls file**
 - Open the file `/src/urls.txt` and replace `{github-user}` with your github user
+```
+https://github.com/{ENVIRONMENT_NAME}/doa17-infrastructure.git
+https://github.com/{ENVIRONMENT_NAME}/doa17-application.git
+```
 - save the changes and update your remote repository
 
 **Create Project in Jenkins ADOP Platform**
