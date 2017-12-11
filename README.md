@@ -2,6 +2,12 @@
 
 In this exercise you will put in practice the concepts of Continuous Integration and Continuous Delivery/Deployment, and Infrastructure as a Code, you will learn about Jenkins Pipelines in the ADOP Platform, and a variety of AWS tools for Developers and Operators.
 
+This is the architecture used in this exercise:
+![architecture diagram](https://github.com/chuymarin/doa17-cartridge/blob/master/assets/doa17-diagram.png)
+
+And we are goind to create these two pipelines in Jenkins
+![pipelines diagram](https://github.com/chuymarin/doa17-cartridge/blob/master/assets/doa17-process.png)
+
 Let's start!
 
 - [Lab 1 - Get the code and load Cartridge](https://github.com/chuymarin/doa17-cartridge/blob/master/LAB_1.md)
