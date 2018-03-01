@@ -33,7 +33,7 @@ Note: ENVIRONMENT_NAME will be used in the next steps
 - save the changes and update your remot repository
 
 **Review and modify cartridge repository urls file**
-- Open the file `/src/urls.txt` and replace `{github-user}` with your github user
+- Open the file `doa17-cartrdige/src/urls.txt`, add the following content and replacete the `{ENVIRONMENT_NAME}` with yours:
 ```
 https://github.com/{ENVIRONMENT_NAME}/doa17-infrastructure.git
 https://github.com/{ENVIRONMENT_NAME}/doa17-application.git
