@@ -22,8 +22,7 @@ If you don't have a github account, go to [github.com](https://github.com/) and 
   - Outputs: values of the created resources.
   
 **Review and modify infrastructure repository create-project.json file**
-- Open the file `create-project.json` and `create-project-template.json`
-- Replace the contents from `create-project.json` with the contents of `create-project-template.json`
+- Open the file `create-project.json`
 - Replace `{ENVIRONMENT_NAME}` with your name or academy user in lower case, example:
 ```
 "name": "{ENVIRONMENT_NAME}-project",
