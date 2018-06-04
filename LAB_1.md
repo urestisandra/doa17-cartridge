@@ -12,7 +12,7 @@ If you don't have a github account, go to [github.com](https://github.com/) and 
 **Clone the repositories in your local machine:**
 - Create the directories `/projects/doa17/` in your user directory
 - Open GitBash and go to `/projects/doa17/` directory
-- Clone the 3 repositories from your github account
+- Clone the 3 repositories from your github account using https
 
 **Review infrastructure repository template 03**
 - Open the file: `03-aws-devops-workshop-environment-setup.template` this tempalte contains
@@ -53,3 +53,7 @@ https://github.com/{ENVIRONMENT_NAME}/doa17-application.git
   - Leave the other values empty
   - Build the Job
 - Go to Jenkins/DevOps_Academy/{your-directory} and you will see some Jobs and Views created, let's review them.
+
+**Next Lab**
+- [Lab 2 - Update and execute Environment Pipeline](https://github.com/chuymarin/doa17-cartridge/blob/master/LAB_2.md)
+
