@@ -172,3 +172,6 @@ set -x'''.stripMargin()
 
 **Troubleshooting**
 - If one of the jobs from the pipeline fails, check if you missed some steps and change accordingly, if the problem persists ask your Instructor for a solution.
+
+**Next Lab**
+- [Lab 3 - Update and execute CI/CD Pipeline](https://github.com/chuymarin/doa17-cartridge/blob/master/LAB_3.md)
