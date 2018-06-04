@@ -13,6 +13,7 @@ If you don't have a github account, go to [github.com](https://github.com/) and 
 - Create the directories `/projects/doa17/` in your user directory
 - Open GitBash and go to `/projects/doa17/` directory
 - Clone the 3 repositories from your github account using https
+- Now you can follow the lab instructions from your own repository
 
 **Review infrastructure repository template 03**
 - Open the file: `03-aws-devops-workshop-environment-setup.template` this tempalte contains
