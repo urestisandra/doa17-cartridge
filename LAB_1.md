@@ -14,7 +14,7 @@ If you don't have a github account, go to [github.com](https://github.com/) and 
 - Open GitBash and go to `/projects/doa17/` directory
 - Clone the 3 repositories from your github account
 
-**Review and modify infrastructure repository template 03**
+**Review infrastructure repository template 03**
 - Open the file: `03-aws-devops-workshop-environment-setup.template` this tempalte contains
   - Mappings: matches a key to a corresponding set of named values, and use functions to return a named value based on a specified key.
   - Parameters: definded values sepcified at stack launch time.
