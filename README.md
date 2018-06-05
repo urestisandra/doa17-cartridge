@@ -8,7 +8,8 @@ This is the architecture used in this exercise:
 And we are going to create these two pipelines in Jenkins
 ![pipelines diagram](https://github.com/chuymarin/doa17-cartridge/blob/master/assets/doa17-process.png)
 
-**Required Software:**
+**Requirements:**
+* GitHub Account
 * Git: https://git-scm.com/download
 * Code Editor: 
   * SublimeText: https://www.sublimetext.com/3
