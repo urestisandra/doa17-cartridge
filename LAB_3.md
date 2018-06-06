@@ -43,7 +43,7 @@ echo "[INFO] Default region is set to $AWS_DEFAULT_REGION"
 
 echo "[INFO] Building Application Code"
 aws codebuild start-build --project-name ${ENVIRONMENT_NAME}-project
-sleep 35s
+sleep 60s
 
 echo "[INFO] Getting Code Build eTAG"
 BUILD_ETAG=$(aws s3api head-object --bucket doa17-${ENVIRONMENT_NAME} --key WebAppOutputArtifact.zip --query \'ETag\' --output text)
